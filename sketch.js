@@ -17,7 +17,7 @@ function setup(){
     //video.hide();
     poseNet = ml5.poseNet(video,"single"); // This is the posenet object
     
-    player = createSprite(windowWidth/2,windowHeight-150,50,50);
+    player = createSprite(windowWidth/2,windowHeight-200,50,100);
     player.shapeColor = color(255);
 
     floors = new Group();
@@ -33,14 +33,23 @@ function draw(){
     poseNet.on('pose', function(results){
         //console.log(results[0]);
     });
-    
     if(count%30==0){
     	floor = newFloor();
+    }
+    if(player.collide(floors)){
+        player.velocity.y = 0;
+    }
+    if(keyWentDown(' ')){
+        player.velocity.y = -2;
+    }
+    if(keyWentUp(' ')){
+    	player.velocity.y = 2;
     }
 
     drawSprites();
 }
 
+//Functions to create new obstacles, enemies, and floors
 function newFloor(){
     var floor = createSprite(windowWidth*2,windowHeight-100,windowWidth,100);
     floor.shapeColor = color("green");
