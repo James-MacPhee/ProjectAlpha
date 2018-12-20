@@ -1,0 +1,19 @@
+body{
+    background-color: #b637c6;
+}
+
+#canvasArea{
+    text-align: center;
+    height:650px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: cadetblue;
+}
+
+footer{
+    text-align: center;
+    background: black;
+    color: white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
