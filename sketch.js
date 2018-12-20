@@ -14,4 +14,7 @@ function setup(){
 
 function draw(){
     image(video,0,0,1200,650);
+    poseNet.on('pose', function(results){
+        //console.log(results[0]);
+    });
 }
